@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100,400;100,900;125,400;125,900&display=swap");
+
+      @property --bg-color {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: #ffffff;
+      }
+
+      @keyframes move {
+        from {
+          background-position-x: 0;
+        }
+        to {
+          background-position-x: 1233px;
+        }
+      }
+
+      @keyframes background {
+        0%,
+        50%,
+        100% {
+          --bg-color: #ffffff;
+        }
+        25% {
+          --bg-color: #eaff80;
+        }
+        75% {
+          --bg-color: #9580ff;
+        }
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.85;
+        }
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        --bg-color: #ffffff;
+        background: radial-gradient(
+          ellipse 120% 60% at bottom,
+          var(--bg-color),
+          #ffffff 100%
+        );
+        animation: background 5s infinite linear;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url(2b4d.png);
+        background-size: 40vh;
+        background-position-y: bottom;
+        background-repeat: repeat-x;
+        mix-blend-mode: overlay;
+        animation: move 30s infinite linear;
+        pointer-events: none;
+      }
+
+      h1 {
+        font-family: Mona Sans;
+        font-stretch: extra-expanded;
+        margin: -50px;
+        font-size: calc(10vw + 10vh);
+      }
+
+      h1 a {
+        color: black;
+        animation: flicker 0.1s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+        text-decoration: none;
+      }
+
+      p {
+        font-size: calc(1vw + 1vh);
+        font-family: Mona Sans;
+        opacity: 0.5;
+        margin: 0;
+      }
+    </style>
+    <body>
+      <h1>
+        W<a
+          href="https://drive.google.com/drive/folders/16zXML4MVcFqRw-w7FkqHGw8vceTJimt2?usp=sharing"
+          >I</a
+        >P!
+      </h1>
+      <p>Nothing to see here ;)</p>
+    </body>
+  </head>
+</html>
